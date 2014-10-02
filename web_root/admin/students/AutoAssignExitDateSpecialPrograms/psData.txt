@@ -1,0 +1,5 @@
+define(function() {
+    return {
+        exitDate: "~[tlist_sql;select to_char(lastday  + interval '1' day, 'fmmm/fmdd/yyyy') from terms where id=~(curyearid)00 and schoolid=(select schoolid from students where id=~(curstudid))]~(lastday)[/tlist_sql]"
+    }
+});

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<!-- start right frame -->
+<head>
+    <title>~[if.~(rn)=-99]~[text:psx.html.admin_students.specialprogramsedit.new][else]~[text:psx.html.admin_students.specialprogramsedit.edit][/if]~[text:psx.html.admin_students.specialprogramsedit.special_program_enrollment]</title>
+    ~[wc:UI_js_includes]
+    ~[wc:commonscripts]
+
+    <link href="/images/css/screen.css" rel="stylesheet" media="screen">
+    <link href="/images/css/print.css" rel="stylesheet" media="print">
+
+    <!-- QUnit imports -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/qunit/1.13.0/qunit.css" rel="stylesheet">
+    <script src="/scripts/qunit.js"></script>
+
+
+    <script src="/scripts/AutoAssignExitDateSpecialPrograms/autoassign.js"></script>
+    <script src="/scripts/AutoAssignExitDateSpecialPrograms/tests.js"></script>
+</head>
+<body>
+<div id="qunit"></div>
+<form action="/admin/changesrecorded.white.html" method="POST">
+    ~[wc:admin_header_frame_css]<!-- breadcrumb start --><a href="/admin/home.html" target="_top">~[text:psx.html.admin_students.specialprogramsedit.start_page]</a> &gt; <a href="home.html?selectstudent=nosearch" target="_top">~[text:psx.html.admin_students.specialprogramsedit.student_selection]</a> &gt; <a href="/admin/students/specialprograms.html?frn=~(studentfrn)">~[text:psx.html.admin_students.specialprogramsedit.special_programs]</a> &gt; ~[if.~(rn)=-99]~[text:psx.html.admin_students.specialprogramsedit.new1][else]~[text:psx.html.admin_students.specialprogramsedit.edit1][/if]~[text:psx.html.admin_students.specialprogramsedit.special_program_enrollment1]<!-- breadcrumb end -->~[wc:admin_navigation_frame_css]
+
+    ~[wc:title_student_begin_css]~[if.~(rn)=-99]~[text:psx.html.admin_students.specialprogramsedit.new2][else]~[text:psx.html.admin_students.specialprogramsedit.edit2][/if]~[text:psx.html.admin_students.specialprogramsedit.special_program_enrollment2]~[wc:title_student_end_css]
+
+    <!-- start of content and bounding box -->
+    <div class="box-round">
+
+        <table border="0" cellspacing="0" cellpadding="4">
+            <tr class="alt">
+                <td class="bold">~[text:psx.html.admin_students.specialprogramsedit.comment]</td>
+                <td><textarea name="[41]comment" rows="2" cols="42"></textarea></td>
+            </tr>
+            <tr>
+                <td class="bold">~[text:psx.html.admin_students.specialprogramsedit.entry_date]</td>
+                <td><input type="text" name="[41]enter_date" value="" size="10" class="psDateWidget"></td>
+            </tr>
+            <tr class="alt">
+                <td class="bold">~[text:psx.html.admin_students.specialprogramsedit.exit_date]</td>
+                <td><input type="text" name="[41]exit_date" value="" size="10" class="psDateWidget"></td>
+            </tr>
+            <tr>
+                <td class="bold">~[text:psx.html.admin_students.specialprogramsedit.exit_reason]</td>
+                <td><input type="text" name="[41]exitcode" value="" size="4"></td>
+            </tr>
+            <tr class="alt">
+                <td class="bold">~[text:psx.html.admin_students.specialprogramsedit.grade_level]</td>
+                <td><input type="text" name="[41]gradelevel" value="" size="4"></td>
+            </tr>
+            <tr>
+                <td class="bold"><a href="/admin/specialprograms/" target="_top">~[text:psx.html.admin_students.specialprogramsedit.program]</a></td>
+                <td><select name="[41]programid" special="lists.specprog"><option></select></td>
+            </tr>
+
+            <!-- Start insert referral methods drop down -->
+
+            <!-- Start insert state specific special program enrollment information -->
+
+            ~[if.~[displaypref:districtstate]=CA]
+            ~[x:insertfileduplicate;/admin/students/state/special~[displaypref:districtstate].html]
+            [else]
+            ~[x:insertfile;/admin/students/state/special~[displaypref:districtstate].html]
+            [/if]
+
+            <!-- End insert state specific special program enrollment information -->
+        </table>
+
+        <input type="hidden" name="ac" value="prim">
+        <input type="hidden" name="ac" value="initschools">
+        <input type="hidden" name="[41]studentid" value="~(curstudid)">
+
+        ~[if.~[displaypref:districtstate]=CA]
+        ~[x:insertfile;state/usa_ca/brij_save_action.html]
+        [/if]
+        <div class="button-row">
+            ~(deletebutton3)~[submitbutton]
+        </div>
+    </div>
+
+    ~[wc:admin_footer_frame_css]
+</form>
+
+</body>
+</html><!-- end right frame -->
