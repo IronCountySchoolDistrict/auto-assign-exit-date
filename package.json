@@ -1,0 +1,19 @@
+{
+  "name": "auto-assign-exit-date",
+  "version": "1.0.0",
+  "description": "Automatically fills the Exit Date field in the form on the Special Programs Edit page",
+  "main": "",
+  "scripts": {
+    "test": "mocha-casperjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IronCountySchoolDistrict/auto-assign-exit-date.git"
+  },
+  "author": "IronCountySchoolDistrict",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/IronCountySchoolDistrict/auto-assign-exit-date/issues"
+  },
+  "homepage": "https://github.com/IronCountySchoolDistrict/auto-assign-exit-date#readme"
+}

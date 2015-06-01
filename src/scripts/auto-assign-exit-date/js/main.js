@@ -6,5 +6,5 @@ require.config({
 });
 require(['autoassign'], function(autoassign) {
     'use strict';
-    autoassign.main();
+    autoassign.insertExitDate();
 });
