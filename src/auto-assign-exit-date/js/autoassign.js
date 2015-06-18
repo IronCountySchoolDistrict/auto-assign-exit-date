@@ -1,6 +1,6 @@
 /*global $j, define, require*/
 
-define('autoassign', function (psData) {
+define('autoassign', function () {
     'use strict';
     return {
         insertExitDate: function () {
