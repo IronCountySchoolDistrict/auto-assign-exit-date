@@ -2,8 +2,7 @@
 	if (!psData) {
 		var psData = {};
 	}
-
 	psData.exitDate = "~[tlist_sql;select to_char(lastday  + interval '1' day, 'fmmm/fmdd/yyyy') from terms where id=~(curyearid)00 and schoolid=(select schoolid from students where id=~(curstudid))]~(lastday)[/tlist_sql]";
 </script>
 
-<script src="<!-- @echo IMAGE_SERVER_URL -->/auto-assign-exit-date/js/main.js"></script>
+<script src="/scripts/auto-assign-exit-date/js/autoassign.js"></script>
