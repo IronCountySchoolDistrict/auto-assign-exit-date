@@ -1,0 +1,5 @@
+<permission_mappings>
+    <permission name='/admin/home.html'>
+        <implies allow="post">/ws/schema/query/org.irondistrict.special-programs.exit-date.get</implies>
+    </permission>
+</permission_mappings>

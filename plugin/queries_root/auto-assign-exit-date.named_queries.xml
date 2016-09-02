@@ -1,0 +1,22 @@
+<queries>
+    <query flattened="true" name="org.irondistrict.special-programs.exit-date.get">
+        <args>
+            <arg description="term prefix (25, 26, etc.)" name="term_prefix" required="false" type="primitive" default="~(curyearid)"/>
+            <arg description="STUDENTS.ID" name="student_id" required="false" type="primitive" default="~(curstudid)"/>
+        </args>
+        <columns>
+            <column column="u_student_contacts_staging.id">lastday</column>
+        </columns>
+        <sql>
+            <![CDATA[
+            SELECT to_char(terms.lastday + interval '1' day, 'fmmm/fmdd/yyyy') AS lastday
+            FROM terms
+            WHERE terms.id = to_number(:term_prefix || '00') AND
+                  terms.schoolid = (
+                    SELECT schoolid
+                    FROM students
+                    WHERE id = :student_id)
+      ]]>
+        </sql>
+    </query>
+</queries>
