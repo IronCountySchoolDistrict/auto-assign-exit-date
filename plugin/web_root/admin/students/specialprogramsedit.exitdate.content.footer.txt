@@ -1,11 +1,12 @@
 <script>
 	require.config({
 		paths: {
-			'autoassign': '/scripts/auto-assign-exit-date/js/autoassign'
+			'autoassign': '/scripts/auto-assign-exit-date/js/autoassign',
+			'fetch': 'https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch'
 		}
 	});
 
-	require(['autoassign'], (autoassign) => {
+	require(['autoassign', 'fetch'], (autoassign) => {
 		autoassign.default();
 	});
 </script>
