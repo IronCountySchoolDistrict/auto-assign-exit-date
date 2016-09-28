@@ -17,7 +17,7 @@ export default function() {
           const lastDay = exitDate.record[0].lastday;
           if (!exitDateField.val()) {
             exitDateField.val(lastDay);
-            exitDateField.prop('disabled', 'disabled');
+            exitDateField.prop('readonly', 'readonly');
           }
         }
       });
