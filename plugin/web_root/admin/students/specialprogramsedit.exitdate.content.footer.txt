@@ -3,7 +3,8 @@
 		paths: {
 			'autoassign': '/scripts/auto-assign-exit-date/js/autoassign',
 			'fetch': 'https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch'
-		}
+		},
+		urlArgs: '123423423434'
 	});
 
 	require(['autoassign', 'fetch'], (autoassign) => {
