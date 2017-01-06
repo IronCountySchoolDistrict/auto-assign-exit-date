@@ -5,7 +5,7 @@
             <arg description="STUDENTS.ID" name="student_id" required="false" type="primitive" default="~(curstudid)"/>
         </args>
         <columns>
-            <column column="u_student_contacts_staging.id">lastday</column>
+            <column column="terms.lastday">lastday</column>
         </columns>
         <sql>
             <![CDATA[
