@@ -40,6 +40,12 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
-    "@babel/runtime": "^7.4.5"
+    "@babel/runtime": "^7.4.5",
+    "elliptic": "^6.5.3",
+    "kind-of": "^6.0.3",
+    "lodash": "^4.17.19",
+    "lodash.merge": "^4.6.2",
+    "lodash.template": "^4.5.0",
+    "node-sass": "^4.13.1"
   }
 }
