@@ -40,6 +40,8 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
-    "@babel/runtime": "^7.4.5"
+    "@babel/runtime": "^7.4.5",
+    "follow-redirects": "^1.14.7",
+    "ssh2": "1.4.0"
   }
 }
