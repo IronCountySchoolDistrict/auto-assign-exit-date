@@ -41,5 +41,6 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.4.5"
-  }
+  },
+  "packageManager": "yarn@3.3.1"
 }
